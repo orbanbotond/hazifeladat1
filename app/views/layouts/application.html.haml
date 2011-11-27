@@ -3,15 +3,20 @@
 %html
   %head
     %title Hazifeladat
-    = stylesheet_link_tag    "navigation" 
-    = stylesheet_link_tag    "application" 
+    = stylesheet_link_tag "navigation" 
+    = stylesheet_link_tag "application"
+    = stylesheet_link_tag 'mobile' if mobile_device?
     = javascript_include_tag "application" 
     = javascript_include_tag "jquery.multiselect.min" 
     = csrf_meta_tags
 
   %body
-  #example_2.example_content
-    #top_navigation
-      = render_navigation
+    - if mobile_device?
+      = link_to "Full Site", :mobile => 0
+    - else
+      = link_to "Mobile Site", :mobile => 1
+    #example_2.example_content
+      #top_navigation
+        = render_navigation
 
-    = yield
+      = yield
