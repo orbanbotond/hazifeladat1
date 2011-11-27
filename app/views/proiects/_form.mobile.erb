@@ -1,0 +1,14 @@
+<div id='forms'>
+  <%= simple_form_for(@proiect) do |f| %>
+    <%= f.error_notification %>
+    <ul class="edit rounded">
+      <li><%= f.input :title %></li>
+      <li><%= f.input :description %></li>
+    	<li><%= f.association :users %></li>
+    </ul>
+    <div class="actions">
+      <%= f.button :submit %>
+    </div>
+
+  <% end %>
+</div>

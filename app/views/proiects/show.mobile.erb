@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @proiect.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @proiect.description %>
+</p>
+
+<p>
+  <b>Participants:</b>
+  <ul>
+  <% @proiect.users.each do |user| %>
+    <li><%= link_to user.name, user_url(user)%></li>
+  <% end  %>
+  </ul>
+</p>
+ 
+<%= link_to 'Edit', edit_proiect_path(@proiect) %> |
+<%= link_to 'Back', proiects_path %>
