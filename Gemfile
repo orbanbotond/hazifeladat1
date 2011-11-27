@@ -17,6 +17,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'heroku'
 gem 'simple_form'
 gem 'simple-navigation'
 gem 'haml'
