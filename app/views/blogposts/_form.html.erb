@@ -1,0 +1,13 @@
+<%= simple_form_for(@blogpost) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="inputs">
+    <%= f.input :title %>
+    <%= f.input :content %>
+    <%= f.input :written_at %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

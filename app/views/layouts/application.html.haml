@@ -1,0 +1,17 @@
+!!! XML
+!!!
+%html
+  %head
+    %title Hazifeladat
+    = stylesheet_link_tag    "navigation" 
+    = stylesheet_link_tag    "application" 
+    = javascript_include_tag "application" 
+    = javascript_include_tag "jquery.multiselect.min" 
+    = csrf_meta_tags
+
+  %body
+  #example_2.example_content
+    #top_navigation
+      = render_navigation
+
+    = yield

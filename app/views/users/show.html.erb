@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @user.name %>
+</p>
+
+<p>
+  <b>Involved in projects:</b>
+  <ul>
+  	<% @user.proiects.each do |proiect| %>
+  		<li><%= link_to proiect.title, proiect_path(proiect) %></li>
+  	<% end %>
+  </ul>
+</p>
+
+<p>
+  <b>Participating at events:</b>
+  <ul>
+  	<% @user.events.each do |event| %>
+  		<li><%= link_to event.title, event_path(event) %></li>
+  	<% end %>
+  </ul>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

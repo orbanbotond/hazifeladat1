@@ -1,0 +1,29 @@
+<h1>Listing proiects</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Participants</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @proiects.each do |proiect| %>
+  <tr>
+    <td><%= proiect.title %></td>
+    <td>
+    	<%= proiect.description.to_s()[0..20] << "..." %>
+	</td>
+    <td><%= "---- (" << proiect.users.count.to_s() << ") ----" %></td>
+    <td><%= link_to 'Show', proiect %></td>
+    <td><%= link_to 'Edit', edit_proiect_path(proiect) %></td>
+    <td><%= link_to 'Destroy', proiect, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Proiect', new_proiect_path %>
