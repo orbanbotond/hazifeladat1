@@ -1,9 +1,0 @@
-<%  "Projects" %>
-<ul>
-  <% for project in @proiects %>
-  <li class="arrow">
-    <%= link_to h(project.title), project %>
-  </li>
-  <% end %>
-</ul>
-<ul><li class="arrow"><%= link_to "New Project", new_proiect_path %></li></ul>

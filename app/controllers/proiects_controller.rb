@@ -1,6 +1,9 @@
 class ProiectsController < ApplicationController
   # GET /proiects
   # GET /proiects.json
+  respond_to :mobile
+  respond_to :html
+  respond_to :json
 
   def index
     @proiects = Proiect.all
@@ -16,22 +19,12 @@ class ProiectsController < ApplicationController
   # GET /proiects/1.json
   def show
     @proiect = Proiect.find(params[:id])
-   
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @proiect }
-    end
   end
 
   # GET /proiects/new
   # GET /proiects/new.json
   def new
     @proiect = Proiect.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @proiect }
-    end
   end
 
   # GET /proiects/1/edit
@@ -48,6 +41,7 @@ class ProiectsController < ApplicationController
       if @proiect.save
         format.html { redirect_to @proiect, notice: 'Proiect was successfully created.' }
         format.json { render json: @proiect, status: :created, location: @proiect }
+        format.mobile { redirect_to @proiect, notice: 'Proiect was successfully created.' }
       else
         format.html { render action: "new" }
         format.json { render json: @proiect.errors, status: :unprocessable_entity }

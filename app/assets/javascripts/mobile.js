@@ -1,1 +1,1 @@
-$.jQTouch({});
+jqt = $.jQTouch({ debug: true});
