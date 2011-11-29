@@ -1,0 +1,8 @@
+#forms
+  = simple_form_for(@proiect) do |f|
+    = f.error_notification
+    %ul.edit.rounded
+      %li= f.input :title
+      %li= f.input :description
+      %li= f.association :users
+    %a.submit.blueButton.new_project{ :href => '#' } Submit
