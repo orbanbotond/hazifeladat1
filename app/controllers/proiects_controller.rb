@@ -58,6 +58,7 @@ class ProiectsController < ApplicationController
       if @proiect.update_attributes(params[:proiect])
         format.html { redirect_to @proiect, notice: 'Proiect was successfully updated.' }
         format.json { head :ok }
+        format.mobile { redirect_to @proiect, notice: 'Proiect was successfully updated.' }
       else
         format.html { render action: "edit" }
         format.json { render json: @proiect.errors, status: :unprocessable_entity }

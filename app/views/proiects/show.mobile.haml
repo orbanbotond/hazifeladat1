@@ -1,20 +1,13 @@
 %div{ :id => "projects#{@proiect.id}" }
   .toolbar
-    = link_to "Back", "#", :class => "back"
-    %h1 Project management
+    = link_to "Back", "#{proiects_path}", :class => "back"
+    %h1= @proiect.title
+    %a.button{ :href =>"#{edit_proiect_path(@project)}"} Edit
   .content
-    %p#notice= notice
-
+    %h1 Description
     %p
-      %b Title:
-      = @proiect.title
-
-    %p
-      %b Desription:
       = @proiect.description
-
-    %p
-      %b Participants:
-      %ul
-        - @proiect.users.each do |user|
-          %li= link_to user.name, user_url(user)
+    %h2 Participants:
+    %ul
+      - @proiect.users.each do |user|
+        %li= link_to user.name, user_url(user)

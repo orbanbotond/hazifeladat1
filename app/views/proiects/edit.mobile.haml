@@ -1,0 +1,6 @@
+%div{ :id => "projectsedit#{@proiect.id}"}
+  .toolbar
+    = link_to "Cancel", "#", :class => "back"
+    %h1= "Edit #{@proiect.title}"
+  .content
+    = render 'form'

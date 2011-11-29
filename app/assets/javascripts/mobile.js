@@ -1,1 +1,1 @@
-jqt = $.jQTouch({ debug: true});
+jqt = $.jQTouch({ debug: true, cacheGetRequests: false});
